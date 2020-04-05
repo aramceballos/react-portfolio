@@ -1,20 +1,17 @@
 import React from 'react';
-import { Home } from './components/Home';
-import { Header } from './components/Header';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import { Route } from 'react-router';
-import { GlobalStyle } from './css/GlobalStyles';
+import { Switch, Route } from 'react-router';
+import { Home } from './Pages/Home';
+import { NotFound } from './Pages/NotFound';
+import { GlobalStyles } from './styles/GlobalStyles';
 
-export const App = () => {
+export default () => {
   return (
     <>
-      <GlobalStyle />
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path='/' component={Home} />
-        </Switch>
-      </Router>
+      <GlobalStyles />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route component={NotFound} />
+      </Switch>
     </>
   );
 };
