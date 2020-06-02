@@ -7,10 +7,13 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: 'src/index.html',
+      template: 'public/index.html',
     }),
-    new FaviconsWebpackPlugin('./src/assets/favicon.ico'),
+    new FaviconsWebpackPlugin('public/favicon.ico'),
   ],
+  devServer: {
+    port: 5000,
+  },
   module: {
     rules: [
       {

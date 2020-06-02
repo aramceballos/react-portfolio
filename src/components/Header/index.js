@@ -8,11 +8,9 @@ import {
   NavBar,
   LogoContainer,
   ProfileContainer,
-  Img,
   LinkStyled,
+  Logo,
 } from './styles';
-
-import logo from '../../assets/img/Logo-negro.png';
 
 export const Header = () => {
   return (
@@ -22,15 +20,13 @@ export const Header = () => {
           <a
             href='https://github.com/armc7'
             target='_blank'
-            rel='noopener noreferrer'
-          >
+            rel='noopener noreferrer'>
             <FaGithub size={30} color={'white'} />
           </a>
           <a
             href='https://www.linkedin.com/in/aram-ceballos-2258b717b/'
             target='_blank'
-            rel='noopener noreferrer'
-          >
+            rel='noopener noreferrer'>
             <FaLinkedin size={30} color={'white'} />
           </a>
         </IconsContainer>
@@ -38,7 +34,7 @@ export const Header = () => {
       <NavBar>
         <LogoContainer>
           <Link to='/'>
-            <Img src={logo} alt='logo' />
+            <Logo>Aram Ceballos</Logo>
           </Link>
         </LogoContainer>
         <ProfileContainer>

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { Link as LinkRouter } from 'react-router-dom';
-import img from '../../assets/img/Cover.png';
+import img from '../../assets/img/Cover.jpg';
 
 export const MainWrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   height: 100%;
-  background-image: url(${img});
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(${img});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

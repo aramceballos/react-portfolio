@@ -12,7 +12,7 @@ export const HeaderIcons = styled.section`
   width: 100%;
   height: 50px;
   display: grid;
-  background-color: #47cfac;
+  background-color: #4e4e4e;
 `;
 
 export const IconsContainer = styled.section`
@@ -45,12 +45,12 @@ export const ProfileContainer = styled.section`
   align-items: center;
 `;
 
-export const Img = styled.img`
-  width: 220px;
-  margin-top: 10px;
-`;
-
 export const LinkStyled = styled(Link)`
   color: black;
   border-bottom: 1px solid black;
+`;
+
+export const Logo = styled.h1`
+  font-size: 28px;
+  font-weight: 600;
 `;
