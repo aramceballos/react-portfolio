@@ -9,7 +9,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: 'public/index.html',
     }),
-    new FaviconsWebpackPlugin('public/favicon.ico'),
+    new FaviconsWebpackPlugin('./public/favicon.ico'),
   ],
   devServer: {
     port: 5000,
