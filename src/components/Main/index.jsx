@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainWrapper, Section, Text, Button, Link } from './styles';
+import { MainWrapper, Section, Text } from './styles';
 
 export const Main = () => {
   return (
@@ -10,9 +10,6 @@ export const Main = () => {
           Developer, you can find more information about me, my skills and
           projects i have worked on by pressing the button down below
         </Text>
-        <Button>
-          <Link to='/projects'>Projects</Link>
-        </Button>
       </Section>
     </MainWrapper>
   );

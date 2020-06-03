@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link as LinkRouter } from 'react-router-dom';
 import img from '../../assets/img/Cover.jpg';
 
 export const MainWrapper = styled.main`
@@ -26,17 +25,4 @@ export const Text = styled.p`
   color: black;
   text-align: center;
   color: white;
-`;
-
-export const Button = styled.button`
-  width: 100px;
-  height: 50px;
-  background-color: #47cfac;
-  display: grid;
-  align-items: center;
-`;
-
-export const Link = styled(LinkRouter)`
-  font-weight: 700;
-  font-size: 18px;
 `;
