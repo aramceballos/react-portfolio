@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import MediaCard from '../components/Card/index.jsx';
 
 const projects = [
   {
@@ -31,22 +32,28 @@ const projects = [
   },
 ];
 
+const Section = styled.section`
+  max-width: 750px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+`;
+
+const MediaCardContainer = styled.div`
+  width: 345px;
+  margin: 20px 15px;
+`;
+
 export const Projects = () => {
   return (
     <main>
-      <section>
+      <Section>
         {projects.map(({ id, title, description }) => (
-          <>
-            <div key={id}>
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <div>
-                <img src='' alt='project-image' />
-              </div>
-            </div>
-          </>
+          <MediaCardContainer key={id}>
+            <MediaCard title={title} description={description} />
+          </MediaCardContainer>
         ))}
-      </section>
+      </Section>
     </main>
   );
 };

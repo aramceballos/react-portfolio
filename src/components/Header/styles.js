@@ -12,6 +12,7 @@ export const HeadBar = styled.header`
   box-shadow: 0px 0px 7px 1px black;
   top: 0;
   left: 0;
+  z-index: 9999;
 `;
 
 export const Nav = styled.nav`
