@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { MediaCardContainer } from './styles';
 
 const useStyles = makeStyles({
   root: {
@@ -17,34 +18,49 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard({ title, description }) {
+export const MediaCard = (props) => {
+  const { title, description, src, repository, url } = props;
+
   const classes = useStyles();
 
+  const handleClick = (link) => {
+    var win = window.open(link, '_blank');
+    win.focus();
+  };
+
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image='/static/images/cards/contemplative-reptile.jpg'
-          title='Contemplative Reptile'
-        />
-        <CardContent>
-          <Typography gutterBottom variant='h5' component='h2'>
-            {title}
-          </Typography>
-          <Typography variant='body2' color='textSecondary' component='p'>
-            {description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size='small' color='primary'>
-          Go to page
-        </Button>
-        <Button size='small' color='primary'>
-          Repository
-        </Button>
-      </CardActions>
-    </Card>
+    <MediaCardContainer>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia className={classes.media} image={src} title={title} />
+          <CardContent>
+            <Typography gutterBottom variant='h5' component='h2'>
+              {title}
+            </Typography>
+            <Typography variant='body2' color='textSecondary' component='p'>
+              {description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          {url && (
+            <Button
+              size='small'
+              color='primary'
+              onClick={() => handleClick(url.toString())}>
+              Go to page
+            </Button>
+          )}
+          {repository && (
+            <Button
+              size='small'
+              color='primary'
+              onClick={() => handleClick(repository.toString())}>
+              Repository
+            </Button>
+          )}
+        </CardActions>
+      </Card>
+    </MediaCardContainer>
   );
-}
+};

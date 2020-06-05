@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import img from '../../assets/img/Cover.jpg';
 
 export const MainWrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(${img});
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+    url('https://res.cloudinary.com/dh5iufklf/image/upload/v1591223199/assets/Cover_m0ilqu.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
