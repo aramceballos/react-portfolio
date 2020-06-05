@@ -7,8 +7,8 @@ export const Main = () => {
       <Section>
         <Text>
           Hi my name is Aram Ceballos and i am a JavaScript Full Stack
-          Developer, you can find more information about me, my skills and
-          projects i have worked on in the projects section
+          Developer, in this page you can find more information about me, my
+          skills and projects i have worked on
         </Text>
       </Section>
     </MainWrapper>
