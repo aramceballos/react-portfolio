@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -45,13 +45,27 @@ const styles = (theme) => ({
 });
 
 const ToolbarComponent = ({ classes, openDrawerHandler }) => {
-  const [anchorEl, setAnchorEl] = useState(false);
+  const [tabsValue, setTabsValue] = useState(null);
 
-  const handleProfileMenuOpen = () => {
-    setAnchorEl(false);
-  };
+  let location = useLocation();
 
-  const menuId = 'primary-search-account-menu';
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/projects':
+        setTabsValue(0);
+        break;
+      case '/certificates':
+        setTabsValue(1);
+        break;
+      case '/about':
+        setTabsValue(2);
+        break;
+
+      default:
+        setTabsValue(null);
+        break;
+    }
+  }, [location.pathname]);
 
   return (
     <div className={classes.grow}>
@@ -64,7 +78,7 @@ const ToolbarComponent = ({ classes, openDrawerHandler }) => {
           </Link>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Tabs aria-label='simple tabs example'>
+            <Tabs aria-label='simple tabs example' value={tabsValue}>
               <Link className={classes.link} to='/projects'>
                 <Tab className={classes.tab} label='Projects' />
               </Link>

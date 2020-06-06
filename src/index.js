@@ -5,7 +5,7 @@ import { ApolloProvider } from 'react-apollo';
 import App from './routes/App';
 
 const client = new ApolloClient({
-  uri: 'https://portfolio-graphql-api-izn32d07j.now.sh/graphql',
+  uri: 'https://portfolio-graphql-api.now.sh/graphql',
 });
 
 ReactDOM.render(

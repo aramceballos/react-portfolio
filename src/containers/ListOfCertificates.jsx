@@ -1,30 +1,26 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import { ListOfCardsComponent } from '../components/ListOfCards/index.jsx';
+import { ListOfCertificatesComponent } from '../components/ListOfCertificates/index.jsx';
 
 const query = gql`
   query {
-    projects {
+    certificates {
       _id
-      title
-      description
-      technologies
+      name
       src
-      url
-      repository
     }
   }
 `;
 
-export const ListOfCards = () => (
+export const ListOfCertificates = () => (
   <Query query={query}>
     {({ loading, error, data }) => {
       if (loading) return <p>Loading</p>;
       if (error) return <p>Error</p>;
-      const { projects = [] } = data;
+      const { certificates = [] } = data;
 
-      return <ListOfCardsComponent projects={projects} />;
+      return <ListOfCertificatesComponent certificates={certificates} />;
     }}
   </Query>
 );
