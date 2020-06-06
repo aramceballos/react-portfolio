@@ -17,6 +17,11 @@ export const Section = styled.section`
   justify-items: center;
   height: 350px;
   margin-top: 80px;
+
+  @media screen and (max-width: 480px) {
+    grid-column: 4;
+    margin: 80px 20px;
+  }
 `;
 
 export const Text = styled.p`
@@ -25,4 +30,8 @@ export const Text = styled.p`
   color: black;
   text-align: center;
   color: white;
+
+  @media screen and (max-width: 480px) {
+    font-size: 23px;
+  }
 `;
