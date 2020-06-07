@@ -19,8 +19,13 @@ const useStyles = makeStyles({
 export const PdfMediaCard = ({ name, src }) => {
   const classes = useStyles();
 
+  const handleClick = () => {
+    const win = window.open(src, '_blank');
+    win.focus();
+  };
+
   return (
-    <MediaCardContainer>
+    <MediaCardContainer onClick={handleClick}>
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia className={classes.media} image={src} title={name} />
