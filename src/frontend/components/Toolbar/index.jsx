@@ -18,7 +18,7 @@ const styles = (theme) => ({
   },
   title: {
     color: 'white',
-    fontSize: '33px',
+    fontSize: '28px',
     fontWeight: '100',
     [theme.breakpoints.down('xs')]: {
       fontSize: '25px',
