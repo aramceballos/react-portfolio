@@ -8,7 +8,7 @@ const client = new ApolloClient({
   uri: 'https://portfolio-graphql-api.now.sh/graphql',
 });
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>,
