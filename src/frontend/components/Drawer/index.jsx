@@ -36,9 +36,9 @@ const DrawerComponent = ({
             <ListItemText primary='Certificates' />
           </ListItem>
         </Link>
-        <Link to='/about'>
+        <Link to='/curriculum'>
           <ListItem button>
-            <ListItemText primary='About me' />
+            <ListItemText primary='Curriculum' />
           </ListItem>
         </Link>
       </List>

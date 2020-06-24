@@ -57,7 +57,7 @@ const ToolbarComponent = ({ classes, openDrawerHandler }) => {
       case '/certificates':
         setTabsValue(1);
         break;
-      case '/about':
+      case '/curriculum':
         setTabsValue(2);
         break;
 
@@ -85,8 +85,8 @@ const ToolbarComponent = ({ classes, openDrawerHandler }) => {
               <Link className={classes.link} to='/certificates'>
                 <Tab className={classes.tab} label='Certificates' />
               </Link>
-              <Link className={classes.link} to='/about'>
-                <Tab className={classes.tab} label='About me' />
+              <Link className={classes.link} to='/curriculum'>
+                <Tab className={classes.tab} label='Curriculum' />
               </Link>
             </Tabs>
           </div>
