@@ -9,6 +9,7 @@ const Image = styled.img`
   width: 100vw;
   max-width: 600px;
   margin: 0 auto;
+  height: 100%;
 `;
 
 export const Curriculum = () => (
