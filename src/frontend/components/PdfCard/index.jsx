@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -17,6 +17,20 @@ const useStyles = makeStyles({
 });
 
 export const PdfMediaCard = ({ name, src }) => {
+  const element = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver((entries) => {
+      const { isIntersecting } = entries[0];
+      if (isIntersecting) {
+        setShow(true);
+        observer.disconect();
+      }
+    });
+    observer.observe(element.current);
+  }, [element]);
+
   const classes = useStyles();
 
   const handleClick = () => {
@@ -25,17 +39,21 @@ export const PdfMediaCard = ({ name, src }) => {
   };
 
   return (
-    <MediaCardContainer onClick={handleClick}>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia className={classes.media} image={src} title={name} />
-          <CardContent>
-            <Typography gutterBottom variant='h5' component='h2'>
-              {name}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+    <MediaCardContainer ref={element} onClick={handleClick}>
+      {show && (
+        <>
+          <Card className={classes.root}>
+            <CardActionArea>
+              <CardMedia className={classes.media} image={src} title={name} />
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='h2'>
+                  {name}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </>
+      )}
     </MediaCardContainer>
   );
 };
